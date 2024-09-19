@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignUuid('user_id')->constrained();
             $table->string('title')->default('Untitiled Note');
             $table->text('body');
+            $table->boolean('is_public')->default(false);
             $table->timestamps();
         });
     }
