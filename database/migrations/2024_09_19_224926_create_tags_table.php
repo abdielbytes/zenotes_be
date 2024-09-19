@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notes', function (Blueprint $table) {
-            $table->uuid('note_id')->primary();
-            $table->foreignUuid('user_id')->constrained();
-            $table->string('title')->default('Untitiled Note');
-            $table->text('body');
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('tags');
     }
 };
